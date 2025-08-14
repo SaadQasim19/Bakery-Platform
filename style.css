@@ -1,0 +1,14 @@
+ :root {
+            --primary-brown: #8B4513;
+            --secondary-brown: #D2691E;
+            --accent-gold: #FFD700;
+            --dark-brown: #654321;
+            --light-brown: #DEB887;
+            --cream: #F5F5DC;
+            --white: #FFFFFF;
+            --shadow-light: rgba(139, 69, 19, 0.1);
+            --shadow-medium: rgba(139, 69, 19, 0.2);
+            --shadow-dark: rgba(139, 69, 19, 0.3);
+            --gradient-primary: linear-gradient(135deg, #8B4513 0%, #D2691E 50%, #FFD700 100%);
+            --gradient-secondary: linear-gradient(45deg, #654321 0%, #8B4513 100%);
+        }
