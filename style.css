@@ -12,3 +12,8 @@
             --gradient-primary: linear-gradient(135deg, #8B4513 0%, #D2691E 50%, #FFD700 100%);
             --gradient-secondary: linear-gradient(45deg, #654321 0%, #8B4513 100%);
         }
+                * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
