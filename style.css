@@ -1,19 +1,28 @@
  :root {
-            --primary-brown: #8B4513;
-            --secondary-brown: #D2691E;
-            --accent-gold: #FFD700;
-            --dark-brown: #654321;
-            --light-brown: #DEB887;
-            --cream: #F5F5DC;
-            --white: #FFFFFF;
-            --shadow-light: rgba(139, 69, 19, 0.1);
-            --shadow-medium: rgba(139, 69, 19, 0.2);
-            --shadow-dark: rgba(139, 69, 19, 0.3);
-            --gradient-primary: linear-gradient(135deg, #8B4513 0%, #D2691E 50%, #FFD700 100%);
-            --gradient-secondary: linear-gradient(45deg, #654321 0%, #8B4513 100%);
-        }
-                * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+     --primary-brown: #8B4513;
+     --secondary-brown: #D2691E;
+     --accent-gold: #FFD700;
+     --dark-brown: #654321;
+     --light-brown: #DEB887;
+     --cream: #F5F5DC;
+     --white: #FFFFFF;
+     --shadow-light: rgba(139, 69, 19, 0.1);
+     --shadow-medium: rgba(139, 69, 19, 0.2);
+     --shadow-dark: rgba(139, 69, 19, 0.3);
+     --gradient-primary: linear-gradient(135deg, #8B4513 0%, #D2691E 50%, #FFD700 100%);
+     --gradient-secondary: linear-gradient(45deg, #654321 0%, #8B4513 100%);
+ }
+
+ * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+ }
+
+ body {
+     font-family: 'Poppins', sans-serif;
+     line-height: 1.6;
+     color: #333;
+     overflow-x: hidden;
+     background: linear-gradient(135deg, #faf9f7 0%, #f5f3f0 100%);
+ }
