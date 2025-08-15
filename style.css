@@ -26,3 +26,20 @@
      overflow-x: hidden;
      background: linear-gradient(135deg, #faf9f7 0%, #f5f3f0 100%);
  }
+   ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: var(--cream);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: var(--gradient-primary);
+            border-radius: 4px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--gradient-secondary);
+        }
+        
