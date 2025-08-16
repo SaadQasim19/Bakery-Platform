@@ -256,3 +256,48 @@
             opacity: 1;
             visibility: visible;
         }
+          .category-filter {
+            background: white;
+            padding: 1.5rem 2rem;
+            margin-bottom: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px var(--shadow-light);
+            display: none;
+        }
+        
+        .category-filter.active {
+            display: block;
+            animation: fadeInUp 0.5s ease;
+        }
+        
+        .filter-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+        }
+        
+        .filter-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--primary-brown);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .clear-filter {
+            background: none;
+            border: 1px solid var(--secondary-brown);
+            color: var(--secondary-brown);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            transition: all 0.3s ease;
+        }
+        
+        .clear-filter:hover {
+            background: var(--secondary-brown);
+            color: white;
+        }
