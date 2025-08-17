@@ -602,3 +602,35 @@
         .product-image.snacks-img {
             background-image: url('https://images.unsplash.com/photo-1601314002957-22d78f6de4d2?w=400&h=300&fit=crop&crop=center');
         }
+                .product-info {
+            padding: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .product-info h3 {
+            color: var(--primary-brown);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            font-weight: 600;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .product-info p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        
+        .product-price {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1rem;
+        }
+        
+        .price {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--secondary-brown);
+        }
