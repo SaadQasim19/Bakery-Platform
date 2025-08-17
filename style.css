@@ -634,3 +634,50 @@
             font-weight: 600;
             color: var(--secondary-brown);
         }
+         .order-btn {
+            background: var(--gradient-primary);
+            color: white;
+            border: none;
+            padding: 0.7rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px var(--shadow-light);
+            position: relative;
+            overflow: hidden;
+            min-width: 120px;
+            text-align: center;
+        }
+        
+        .order-btn:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px var(--shadow-medium);
+        }
+        
+        .order-btn:disabled {
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .order-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+            z-index: 1;
+        }
+        
+        .order-btn:hover:not(:disabled)::before {
+            left: 100%;
+        }
+        
+        .order-btn span {
+            position: relative;
+            z-index: 2;
+        }
+        
