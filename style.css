@@ -752,3 +752,56 @@
             z-index: 2;
             animation: pulse 2s ease-in-out infinite alternate;
         }
+              .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+        
+        .contact-info {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px var(--shadow-light);
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 2rem;
+            gap: 1.5rem;
+            padding: 1.5rem;
+            background: rgba(139, 69, 19, 0.05);
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-item:hover {
+            background: rgba(139, 69, 19, 0.1);
+            transform: translateX(5px);
+        }
+        
+        .contact-item i {
+            font-size: 1.8rem;
+            color: var(--secondary-brown);
+            width: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--gradient-primary);
+            color: white;
+            border-radius: 50%;
+            height: 40px;
+        }
+        
+        .contact-item div h4 {
+            color: var(--primary-brown);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        
+        .contact-item div p {
+            color: #666;
+            line-height: 1.5;
+        }
+        
