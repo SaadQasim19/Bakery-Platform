@@ -579,3 +579,26 @@
             filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.5));
             font-size: 3rem;
         }
+           .product-image.cake-img {
+            background-image: url('https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=400&h=300&fit=crop&crop=center');
+        }
+        
+        .product-image.sweets-img {
+            background-image: url('https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=400&h=300&fit=crop&crop=center');
+        }
+        
+        .product-image.bread-img {
+            background-image: url('https://images.unsplash.com/photo-1509440159596-0249088772ff?w=400&h=300&fit=crop&crop=center');
+        }
+        
+        .product-image.cookies-img {
+            background-image: url('https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=400&h=300&fit=crop&crop=center');
+        }
+        
+        .product-image.dessert-img {
+            background-image: url('https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?w=400&h=300&fit=crop&crop=center');
+        }
+        
+        .product-image.snacks-img {
+            background-image: url('https://images.unsplash.com/photo-1601314002957-22d78f6de4d2?w=400&h=300&fit=crop&crop=center');
+        }
