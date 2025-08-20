@@ -1139,3 +1139,7 @@
                 text-align: center;
             }
         }
+                    /* Smooth scrolling */
+            html {
+                scroll-behavior: smooth;
+            }
