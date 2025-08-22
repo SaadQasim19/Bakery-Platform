@@ -162,3 +162,19 @@ function showSlide(n) {
                 });
             }
         });
+
+           const allProductCards = document.querySelectorAll('.product-card');
+        allProductCards.forEach(card => {
+            card.addEventListener('mouseenter', (e) => {
+                card.style.boxShadow = '0 25px 50px rgba(139, 69, 19, 0.3)';
+                
+                // 3D tilt effect
+                card.addEventListener('mousemove', handleCardTilt);
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.boxShadow = '0 15px 35px rgba(139, 69, 19, 0.1)';
+                card.style.transform = 'translateY(0) rotateX(0) rotateY(0)';
+                card.removeEventListener('mousemove', handleCardTilt);
+            });
+        });
