@@ -28,3 +28,8 @@ function showSlide(n) {
                 showSlide(currentSlide);
             });
         });
+          const mobileMenu = document.getElementById('mobile-menu');
+        const navMenu = document.getElementById('nav-menu');
+        const sideMenu = document.getElementById('side-menu');
+        const menuOverlay = document.getElementById('menu-overlay');
+        const closeMenu = document.getElementById('close-menu');
