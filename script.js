@@ -115,3 +115,12 @@ function showSlide(n) {
             // Hide filter display
             categoryFilter.classList.remove('active');
         });
+          const navLinks = document.querySelectorAll('.nav-menu a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                const icon = mobileMenu.querySelector('i');
+                icon.classList.add('fa-bars');
+                icon.classList.remove('fa-times');
+            });
+        });
