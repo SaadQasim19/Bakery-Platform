@@ -192,3 +192,11 @@ function showSlide(n) {
             
             card.style.transform = `translateY(-15px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
         }
+ window.addEventListener('load', () => {
+            const loading = document.getElementById('loading');
+            setTimeout(() => {
+                loading.classList.add('hidden');
+                // Initialize scroll animations after loading
+                initScrollAnimations();
+            }, 1500);
+        });
