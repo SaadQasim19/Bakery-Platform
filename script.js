@@ -53,3 +53,24 @@ function showSlide(n) {
         const categoryFilter = document.getElementById('category-filter');
         const filterTitleText = document.getElementById('filter-title-text');
         const clearFilterBtn = document.getElementById('clear-filter');
+  categoryItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const category = item.dataset.category;
+                
+                // Update active category
+                categoryItems.forEach(cat => cat.classList.remove('active'));
+                item.classList.add('active');
+                
+                // Filter products
+                filterProducts(category);
+                
+                // Update filter display
+                updateFilterDisplay(category, item.querySelector('h4').textContent);
+                
+                // Close side menu
+                closeSideMenu();
+                
+                // Scroll to products section
+                document.getElementById('products').scrollIntoView({ behavior: 'smooth' });
+            });
+        });
