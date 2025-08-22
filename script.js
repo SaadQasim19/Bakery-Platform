@@ -229,3 +229,74 @@ function showSlide(n) {
                 observer.observe(el);
             });
         }
+
+         document.querySelectorAll('.order-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                
+                // Get product details
+                const productCard = e.target.closest('.product-card');
+                const productName = productCard.querySelector('h3').textContent;
+                const productPrice = productCard.querySelector('.price').textContent;
+                const productDesc = productCard.querySelector('p').textContent.substring(0, 50) + '...';
+                
+                // Visual feedback - button loading state
+                const originalText = btn.textContent;
+                btn.textContent = 'Opening WhatsApp...';
+                btn.style.opacity = '0.7';
+                btn.disabled = true;
+                
+                // Create detailed WhatsApp message
+                const message = encodeURIComponent(
+                    `🍰 *Order from MashaAllah Sweets & Bakers* 🍰\n\n` +
+                    `📦 *Product:* ${productName}\n` +
+                    `💰 *Price:* ${productPrice}\n` +
+                    `📝 *Description:* ${productDesc}\n\n` +
+                    `📍 *Delivery to:* [Please specify your address]\n` +
+                    `📞 *Contact:* [Your phone number]\n\n` +
+                    `Hello! I would like to place an order for the above item. Please let me know the availability and total cost including delivery charges.`
+                );
+                
+                // Open WhatsApp with enhanced error handling
+                try {
+                    const whatsappURL = `https://wa.me/9205726403093?text=${message}`;
+                    window.open(whatsappURL, '_blank');
+                    
+                    // Show success feedback
+                    setTimeout(() => {
+                        btn.textContent = '✓ Sent to WhatsApp';
+                        btn.style.background = 'linear-gradient(135deg, #28a745 0%, #20c997 100%)';
+                    }, 500);
+                    
+                    // Reset button after 3 seconds
+                    setTimeout(() => {
+                        btn.textContent = originalText;
+                        btn.style.opacity = '1';
+                        btn.style.background = 'var(--gradient-primary)';
+                        btn.disabled = false;
+                    }, 3000);
+                    
+                } catch (error) {
+                    console.error('Error opening WhatsApp:', error);
+                    
+                    // Show error feedback
+                    btn.textContent = '❌ Error occurred';
+                    btn.style.background = 'linear-gradient(135deg, #dc3545 0%, #c82333 100%)';
+                    
+                    // Reset button after 3 seconds
+                    setTimeout(() => {
+                        btn.textContent = originalText;
+                        btn.style.opacity = '1';
+                        btn.style.background = 'var(--gradient-primary)';
+                        btn.disabled = false;
+                    }, 3000);
+                    
+                    // Fallback: Copy phone number to clipboard
+                    navigator.clipboard.writeText('057-2640393').then(() => {
+                        alert('WhatsApp failed to open. Phone number (057-2640393) copied to clipboard!');
+                    }).catch(() => {
+                        alert('WhatsApp failed to open. Please call us at: 057-2640393');
+                    });
+                }
+            });
+        });
