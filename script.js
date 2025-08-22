@@ -300,3 +300,15 @@ function showSlide(n) {
                 }
             });
         });
+ document.addEventListener('DOMContentLoaded', () => {
+            const phoneNumbers = document.querySelectorAll('.contact-item p');
+            phoneNumbers.forEach(p => {
+                if (p.textContent.includes('057')) {
+                    p.style.cursor = 'pointer';
+                    p.style.color = 'var(--secondary-brown)';
+                    p.addEventListener('click', () => {
+                        window.location.href = 'tel:05726403093';
+                    });
+                }
+            });
+        });
