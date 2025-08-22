@@ -93,3 +93,25 @@ function showSlide(n) {
                 });
             }, 100);
         }
+
+         function updateFilterDisplay(category, categoryName) {
+            if (category === 'all') {
+                categoryFilter.classList.remove('active');
+            } else {
+                categoryFilter.classList.add('active');
+                filterTitleText.textContent = categoryName;
+            }
+        }
+
+        // Clear filter
+        clearFilterBtn.addEventListener('click', () => {
+            // Reset all categories
+            categoryItems.forEach(cat => cat.classList.remove('active'));
+            categoryItems[0].classList.add('active'); // Activate "All Products"
+            
+            // Show all products
+            filterProducts('all');
+            
+            // Hide filter display
+            categoryFilter.classList.remove('active');
+        });
