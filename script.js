@@ -47,3 +47,9 @@ function showSlide(n) {
 
         closeMenu.addEventListener('click', closeSideMenu);
         menuOverlay.addEventListener('click', closeSideMenu);
+
+                const categoryItems = document.querySelectorAll('.category-item');
+        const productCards = document.querySelectorAll('.product-card');
+        const categoryFilter = document.getElementById('category-filter');
+        const filterTitleText = document.getElementById('filter-title-text');
+        const clearFilterBtn = document.getElementById('clear-filter');
