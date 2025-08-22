@@ -33,3 +33,9 @@ function showSlide(n) {
         const sideMenu = document.getElementById('side-menu');
         const menuOverlay = document.getElementById('menu-overlay');
         const closeMenu = document.getElementById('close-menu');
+
+          mobileMenu.addEventListener('click', () => {
+            sideMenu.classList.toggle('active');
+            menuOverlay.classList.toggle('active');
+            document.body.style.overflow = sideMenu.classList.contains('active') ? 'hidden' : 'auto';
+        });
