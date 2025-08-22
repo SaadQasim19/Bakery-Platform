@@ -13,3 +13,18 @@ function showSlide(n) {
             slides[currentSlide].classList.add('active');
             dots[currentSlide].classList.add('active');
         }
+         function nextSlide() {
+            currentSlide++;
+            showSlide(currentSlide);
+        }
+        
+        // Auto slide every 5 seconds
+        setInterval(nextSlide, 5000);
+        
+        // Dot navigation
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                currentSlide = index;
+                showSlide(currentSlide);
+            });
+        });
