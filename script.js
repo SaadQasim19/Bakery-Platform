@@ -74,3 +74,22 @@ function showSlide(n) {
                 document.getElementById('products').scrollIntoView({ behavior: 'smooth' });
             });
         });
+         function filterProducts(category) {
+            productCards.forEach(card => {
+                if (category === 'all' || card.dataset.category === category) {
+                    card.style.display = 'block';
+                    card.classList.add('animate');
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+            
+            // Trigger re-layout animation
+            setTimeout(() => {
+                productCards.forEach((card, index) => {
+                    if (card.style.display !== 'none') {
+                        card.style.animationDelay = `${index * 0.1}s`;
+                    }
+                });
+            }, 100);
+        }
