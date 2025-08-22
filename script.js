@@ -138,3 +138,27 @@ function showSlide(n) {
                 }
             });
         });
+         window.addEventListener('scroll', () => {
+            const header = document.querySelector('.header');
+            const scrollY = window.scrollY;
+            
+            if (scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+                header.style.backdropFilter = 'blur(20px)';
+                header.style.boxShadow = '0 5px 30px rgba(139, 69, 19, 0.1)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.backdropFilter = 'blur(20px)';
+                header.style.boxShadow = 'none';
+            }
+            
+            // Parallax effect for hero
+            const hero = document.querySelector('.hero');
+            if (hero) {
+                const parallaxElements = hero.querySelectorAll('.parallax');
+                parallaxElements.forEach(element => {
+                    const speed = 0.5;
+                    element.style.transform = `translateY(${scrollY * speed}px)`;
+                });
+            }
+        });
