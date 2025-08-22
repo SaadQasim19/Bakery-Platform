@@ -39,3 +39,11 @@ function showSlide(n) {
             menuOverlay.classList.toggle('active');
             document.body.style.overflow = sideMenu.classList.contains('active') ? 'hidden' : 'auto';
         });
+          function closeSideMenu() {
+            sideMenu.classList.remove('active');
+            menuOverlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        closeMenu.addEventListener('click', closeSideMenu);
+        menuOverlay.addEventListener('click', closeSideMenu);
