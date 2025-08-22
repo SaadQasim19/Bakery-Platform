@@ -199,4 +199,33 @@ function showSlide(n) {
                 // Initialize scroll animations after loading
                 initScrollAnimations();
             }, 1500);
-        });
+        }); 
+           function initScrollAnimations() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate');
+                        
+                        // Stagger animation for product cards
+                        if (entry.target.classList.contains('product-card')) {
+                            const cards = document.querySelectorAll('.product-card');
+                            cards.forEach((card, index) => {
+                                setTimeout(() => {
+                                    card.classList.add('animate');
+                                }, index * 150);
+                            });
+                        }
+                    }
+                });
+            }, observerOptions);
+
+            // Observe elements for animation
+            document.querySelectorAll('.animate-on-scroll').forEach(el => {
+                observer.observe(el);
+            });
+        }
