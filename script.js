@@ -382,3 +382,4 @@ function showSlide(n) {
                 img.src = url;
             });
         }
+         preloadImages();
