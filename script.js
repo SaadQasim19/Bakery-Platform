@@ -372,3 +372,13 @@ function showSlide(n) {
         document.querySelectorAll('.product-image i').forEach((icon, index) => {
             icon.style.animationDelay = `${index * 0.2}s`;
         });
+         function preloadImages() {
+            const imageUrls = [
+                'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">...</svg>'
+            ];
+            
+            imageUrls.forEach(url => {
+                const img = new Image();
+                img.src = url;
+            });
+        }
