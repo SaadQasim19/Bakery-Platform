@@ -312,3 +312,19 @@ function showSlide(n) {
                 }
             });
         });
+
+          function openWhatsApp() {
+            const message = encodeURIComponent("Hello! I'm interested in your bakery products. Could you please share more details?");
+            window.open(`https://wa.me/9205726403093?text=${message}`, '_blank');
+        }
+
+        // Add click event to WhatsApp icon
+        document.addEventListener('DOMContentLoaded', () => {
+            const whatsappIcon = document.querySelector('.fab.fa-whatsapp');
+            if (whatsappIcon) {
+                whatsappIcon.parentElement.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    openWhatsApp();
+                });
+            }
+        });
