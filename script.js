@@ -352,3 +352,23 @@ function showSlide(n) {
                 }, 20);
             });
         }
+         const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const statsSection = document.querySelector('.about-stats');
+            if (statsSection) {
+                statsObserver.observe(statsSection);
+            }
+        });
+
+        // Add floating animation to product icons
+        document.querySelectorAll('.product-image i').forEach((icon, index) => {
+            icon.style.animationDelay = `${index * 0.2}s`;
+        });
